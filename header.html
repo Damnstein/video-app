@@ -10,10 +10,10 @@
     body {
         font-family: 'Mulish', sans-serif;
         margin: 0px;
-        background-color: #AB88FF;
+        background-color: #8F57FD;
     }
     .header {
-        background-color: #AB88FF;
+        background-color: #8F57FD;
         width: 100%;
         height: 80px;
         display: flex;
@@ -68,6 +68,29 @@
         margin: 0px;
         color: white;
     }
+    .main {
+        height: 300px;
+    }
+    .main__title {
+        color: white;
+        font-size: 25px;
+    }
+    .input {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid white;
+        border-radius: 25px;
+        color: white;
+        font-family: 'Muli', sans-serif;
+        font-size: 16px;
+        height: 50px;
+        padding: 0 20px;
+        width: 70%;
+        outline-style: unset;
+    }
+    ::placeholder {
+        color: white;
+    }
+
 </style>
 <body>
     <header class="header">
@@ -83,5 +106,13 @@
             </ul>
         </div>
     </header>
+    <section class="main">
+        <h2 class="main__title">¿Que te gustaria ver?</h2>
+        <!-- A pesar de estar usando la metodologia BEM,
+        usamos "input" y no "main__input" por si 
+        queremos usar la etiqueta posteriormente
+        Asi no queda anclada al "main" -->
+        <input class ="input"type="text" placeholder="Buscar...">
+    </section>
 </body>
 </html>
