@@ -14,18 +14,13 @@
         overflow: scroll;
         padding: 30px;
         position: relative;
-        /* "position: relative" hace que los contenedores
-        hijos se posicionen en relacion al contenedor padre*/
     }
     .carrousel__container {
         white-space: nowrap;
-        /* white-space: nowrap; hace que los elementos del 
-        carrousel se mantengan en la misma linea y no
-        se apilen en forma vertical*/
         margin: 70px 0;
         padding-bottom: 10px;
     }
-    .carrousel__item {
+    .carrousel-item {
         background-color: red;
         width: 200px;
         height: 250px;
@@ -36,23 +31,52 @@
         cursor: pointer;
         transition: 450ms all;
         transform-origin: center left;
+        position: relative;
     }
-    .carrousel__item:hover ~ .carrousel__item{
+    .carrousel-item:hover ~ .carrousel-item{
         transform: translate3d(100px, 0, 0);
     }
-    .carrousel__container:hover .carrousel__item {
+    .carrousel__container:hover .carrousel-item {
         opacity: 0.3;
     }
-    .carrousel__container:hover .carrousel__item:hover {
+    .carrousel__container:hover .carrousel-item:hover {
         transform: scale(1.5);
         opacity: 1;
+    }
+    .carrousel-item__img {
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+    }
+    .carrousel-item__details {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+        font-size: 10px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 </style>
 <body>
     <section class="carrousel">
         <div class="carrousel__container">
-            <div class="carrousel__item"></div>
-            <div class="carrousel__item"></div>
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="./imagenes/bosque.jpg" alt="Persona mirando un bosque">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="./imagenes/play-64.png" alt="Play">
+                        <img src="./imagenes/más-64.png" alt="Plus">
+                    </div>
+                    <p class="carrousel-item__details--title">Titulo descriptivo</p>
+                    <p class="carrousel-item__details--subtitle">2020 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+            </div>
         </div>
     </section>
 </body>
